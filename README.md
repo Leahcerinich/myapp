@@ -28,4 +28,8 @@ I then created another file saying usercontroller.js this is where the code show
 
 Next step is telling the app.js file that there is a usercontroller and user file.
 
+<<<<<<< HEAD
 After that, I've tested the code and it was successful - Again I will show you on my laptop - Testing uses the some of the CRUD methods. 
+=======
+After that, I've tested the code and it was successful - Again I will show you on my laptop.
+>>>>>>> 0299cb158111fa8f617cfd283a1e36392383a552
