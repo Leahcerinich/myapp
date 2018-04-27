@@ -1,5 +1,3 @@
-// BlogController.js - creating controllers for the blog
-
 var express = require('express');
 var router = express.Router();
 var Blog = require('./Blog'); // recieves all the necessary methods for interacting with the database the actions are posting and get
