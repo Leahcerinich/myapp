@@ -4,11 +4,10 @@ var app = express();
 var db = require('./db');
 var bodyParser = require('body-parser');
 var UserController = require('./user/UserController');
-var BlogController = require('./blog/BlogController');
-
+var BlogController = require('./content/BlogController');// cannot find module???
 
 app.use('/users', UserController);
-blog.use('/blog',BlogController);
-router.use(bodyParser.urlencoded({ extended: true}));
+app.use('/blog', BlogController);
+//router.use(body.Parser.urlencoded({extend: true}));
 
 module.exports = app;

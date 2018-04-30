@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var Blog = require('./Blog'); // recieves all the necessary methods for interacting with the database the actions are posting and get
+var Blog = require('./blog');
+var bodyParser = require('body-parser');
+// recieves all the necessary methods for interacting with the database the actions are posting and get
 
 // creating new content // what the api consists of and what we are trying to do
 router.post('/', function (req, res) {
+
   Blog.create({
     title : req.body.title,
     date : req.body.date,
@@ -11,7 +14,7 @@ router.post('/', function (req, res) {
   },
   function (err, blog) {
     if (err, blog) {
-      if (err) return res.status(500).send("There was a problem adding the blog to the database"); // 500 error value
+      if (err) return res.status(500).send("There was a problem adding the content to the database"); // 500 error value
       res.status(200).send(blog);
       console.log("Blog was added successfully") // call back function adding a new user // 200 success value
     }
@@ -20,35 +23,31 @@ router.post('/', function (req, res) {
 router.get('/', function (req, res) {
 
   Blog.find({}, function (err, blog) {
-  if (err) return res.status(500).send("The was a problem retrieveing the information.");
+  if (err) return res.status(500).send("The was a problem retrieveing the all content.");
   res.status(200).send(blog);
-  }); // returning values from the database 500 value is a problem and 200 send users
+  console.log("Success you have retrieved all content")
+  });
 });
-
+// returning values from the database 500 value is a problem and 200 send users
 // retrieving content via ID
+
 router.get('/:blog', function (req, res) {
-Blog.findById(req.params.blog, function (err, blog) {
+
+  Blog.findById(req.params.blog, function (err, blog) {
   if (err) return res.status(500).send("There was a problem retrieving individual content.");
   res.status(200).send(blog);
-  console.log("Single Blog info retrieved using ID",req.params.blog);
+  console.log("Single content retrieved using ID");
   });
 });
 
- module.exports = router;
+//finding individual ID and update single piece of content in the database
+router.post('/:blog', function (req, res) {
 
-// deleting content from the database
-//router.delete('/:blog', function (req, res) {
-  ///User.findByIdAndRemove(req.params.blog, function (err, blog) {
-    //if (err) return res.status(500).send("There was a problem deleting content.");
-    //res.status(200).send("Blog"+ blog.text +" was deleted.");
-  //});
-//});
+  Blog.findByIdAndUpdate(req.params.blog, function (err, blog) {
+    if (err) return res.status(500).send("There is a problem updating the content");
+    res.status(200).send(blog);
+    console.log("Single user updating content");
+    });
+  });
 
-// update single piece of content in the database
-//router.post('/:blog', function (req, res) {
-//  Blog.findByIdAndUpdate(req.params.blog, function (err, blog) {
-    //  if (err) return res.status(500).send("There is a problem updating the content");
-    //  res.status(200).send(blog);
-      //console.log("Single user updating blog");
-    //});
-  ///});
+module.exports = router;

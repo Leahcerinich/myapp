@@ -12,7 +12,7 @@ xdescribe("Server",() => {
   });
 });
 
-describe("myapp", function() {
+xdescribe("myapp", function() {
   describe("GET /users", function() {
     xit("returns status code 200", function() {
 
@@ -20,7 +20,7 @@ describe("myapp", function() {
         expect(res.statusCode).toBe(200)
     });
   });
-it("reading a users", function() { // blocking out code another way to comment out..
+xit("reading a users", function() { // blocking out code another way to comment out..
     request.get(base_url, function(err, res, body) {
       console.log("Body contains :");
       console.log(body);
@@ -31,11 +31,11 @@ it("reading a users", function() { // blocking out code another way to comment o
       //1. Add users to the database
       //2. Store these users in a variable "usersInDb"
       //3. Retreive those users using the GET /users API
-      //. View users using the GET /users API
-      //4. Store it in variable called "usersFromAPI"
-      //5. Compare usersFromAPI to usersInDb
-      // expect(usersFromAPI).toBe(usersInDb);
-      //. testing whether this API is retrieveing a user from the Database
+      //4. View users using the GET /users API
+      //5. Store it in variable called "usersFromAPI"
+      //6. Compare usersFromAPI to usersInDb
+      //7.expect(usersFromAPI).toBe(usersInDb);
+      //8.testing whether this API is retrieveing a user from the Database
       });
     });
   });
@@ -60,9 +60,9 @@ xit("modify a user", function() {
     //4. store it in the variable called usersFromAPI
     //5. Compare - to see if they are a match
     //6. expect (reponse) to be a modified/ changed users
-    //. expect (body) to be updated user info
-    //7.expect(usersinAPI).toBe(usersinDb)
-    //. testing whether this api is changing/ modifying a user
+    //7. expect (body) to be updated user info
+    //8.expect(usersinAPI).toBe(usersinDb)
+    //9. testing whether this api is changing/ modifying a user
 
         });
       });
@@ -87,8 +87,8 @@ xit("create a new user", function() {
     //3. Creating a new user using the /PUT user API
     //4. Store it in a variable usersFromAPI
     //5. expect (response) tobr succussful new user added
-    //. expect usersinAPI tobe usersInDb
-    //. testing whether this API is creating a new user
+    //6. expect usersinAPI tobe usersInDb
+    //7. testing whether this API is creating a new user
 
       });
     });
@@ -113,8 +113,8 @@ xit("delete a user", function() {
   //3. delete a new user using the /DELETE API
   //4. delete from stored usersFromAPI
   //5. expect body to be a deleted user
-  //.  expect response to be
-  //. I want to test whether current users are deleted
+  //6.  expect response to be
+  //7. I want to test whether current users are deleted
       });
     });
   });
