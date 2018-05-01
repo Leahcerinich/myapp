@@ -1,3 +1,4 @@
+/* eslint-disable */
 var request = require("request"); // setting up the environment - requesting to the server
 var user = require("../app.js");
 var base_url = "http://localhost:3000/users";
@@ -61,7 +62,7 @@ xit("modify a user", function() {
     //5. Compare - to see if they are a match
     //6. expect (reponse) to be a modified/ changed users
     //7. expect (body) to be updated user info
-    //8.expect(usersinAPI).toBe(usersinDb)
+    //8. expect(usersinAPI).toBe(usersinDb)
     //9. testing whether this api is changing/ modifying a user
 
         });
