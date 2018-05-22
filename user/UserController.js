@@ -1,10 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var User = require('./user');
 var bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({ extended: true}));
 
-// recieves all the necessary methods for interacting with the database the actions are posting and get
+var User = require('./User'); // recieves all the necessary methods for interacting with the database the actions are posting and get
 
 // creating a new user
 router.post('/', function (req, res) {
