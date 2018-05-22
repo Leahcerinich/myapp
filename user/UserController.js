@@ -5,7 +5,7 @@ var router = express.Router();
 var bodyParser = require('body-parser'); // module for middleware to handle data through a HTTP request
 router.use(bodyParser.urlencoded({ extended: true}));
 
-var User = require('./user'); // recieves all the necessary methods for interacting with the database the actions are posting and get
+var User = require('./User'); // recieves all the necessary methods for interacting with the database the actions are posting and get
 
 // creating a new user
 router.post('/', function (req, res) {
