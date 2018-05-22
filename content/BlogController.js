@@ -39,7 +39,7 @@ router.get('/:id', function (req, res) {
     });
 });
 
-// deleting a piece of content using an id
+//deleting a piece of content using an id
 router.delete('/:id', function (req, res) {
 
     Blog.findByIdAndRemove(req.params.id, function (err, blog) {
